@@ -1,0 +1,73 @@
+<h4 class="newsI myBox3">Edycja:</h4>
+<div class="news myBox">
+    <button (click)="setVisible(1)" [ngClass]="{'first': vis===1}" class="form"><img class="medium" type="image" src="assets/9.png" alt="img"/><p class="bl">Dodaj kurs</p></button>
+    <button (click)="setVisible(2)" [ngClass]="{'first': vis===2}" class="form"><img class="medium" type="image" src="assets/13.png" alt="img"/><p class="bl">Dodaj przystanek</p></button>
+    <button (click)="setVisible(4)" [ngClass]="{'first': vis===4}" class="form"><img class="medium" type="image" src="assets/6.png" alt="img"/><p class="bl">Dodaj nagrodę</p></button>
+    <div class="center">
+        <form *ngIf="vis===1" class="text-center formA" [formGroup]="set1Form" (ngSubmit)="onSubmit1()">
+          <div class="form-group">
+            <label for="InputDate">Trasa:</label>
+        <select class="form-control form-control-sm" formControlName="InputDate">
+            <option [ngValue]="0">Dni powszednie</option>
+            <option [ngValue]="1">Niedziele</option>
+            <option  [ngValue]="2">Wszystkie dni</option>
+        </select>
+        </div>
+            <div class="form-group">
+                <label for="InputTime">Godzina:</label>
+                <input type="time" class="form-control" id="InputTime" formControlName="InputTime">
+              </div>
+            <div class="form-group" *ngIf="workers.length">
+                <label for="InputLogin">Pracownik:</label>
+            <select class="form-control form-control-sm" formControlName="InputWorker">
+                <option *ngFor="let worker of workers" [ngValue]="worker.id">{{worker.imie}}</option>
+            </select>
+            </div>
+            <div class="form-group" *ngIf="buses.length">
+                <label for="InputLogin">Pojazd:</label>
+            <select class="form-control form-control-sm" formControlName="InputBus">
+                <option *ngFor="let bus of buses" [ngValue]="bus.id">{{bus.firma}}</option>
+            </select>
+            </div>
+            <div class="form-group" *ngIf="ways.length">
+                <label for="InputLogin">Trasa:</label>
+            <select class="form-control form-control-sm" formControlName="InputWay">
+                <option *ngFor="let way of ways" [ngValue]="way.id">{{way.nazwa}}</option>
+            </select>
+            </div>
+            <button type="submit" class="btn btn-primary">OK</button>
+            <p [ngClass]="red ? 'error' : 'sucess'">{{response}}</p>
+          </form>
+    </div>
+   
+    <div class="center">
+        <form *ngIf="vis===2" class="text-center formA" [formGroup]="set2Form" (ngSubmit)="onSubmit2()">
+            <div class="form-group">
+              <label for="InputStop">Nazwa przystanku:</label>
+              <input type="text" class="form-control" id="InputStop" formControlName="InputStop">
+            </div>
+            <button type="submit" class="btn btn-primary">OK</button>
+            <p [ngClass]="red ? 'error' : 'sucess'">{{response}}</p>
+          </form>
+    </div>
+ 
+    <div class="center" *ngIf="vis===4">
+      
+        <form class="text-center formA" [formGroup]="pForm" (ngSubmit)="onSubmit4()">
+            <div class="form-group">
+                <label for="InputP">Nazwa nagrody:</label>
+                <input type="text" class="form-control" id="InputP" formControlName="InputP">
+              </div>
+        
+              <div class="form-group">
+                <label for="InputPk">Punkty:</label>
+                <input type="number" class="form-control" id="InputPk" formControlName="InputPk">
+              </div>
+            
+              <button type="submit" [disabled]="pForm.invalid" class="btn btn-primary">OK</button>
+              <p class="success">{{response}}</p>
+            
+        </form>
+</div>
+   
+</div>

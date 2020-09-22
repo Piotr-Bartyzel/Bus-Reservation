@@ -1,0 +1,50 @@
+<div class="main d-flex justify-content-center">
+  <div class="blur2"></div>
+    <form class="text-center formB" [formGroup]="regForm" (ngSubmit)="onSubmit()">
+        <h4 [ngStyle]="{'color':'white'}">Rejestracja:</h4>
+        <div class="form-group">
+            <label for="InputName">Name: </label>
+            <input type="text" class="form-control" id="InputName" formControlName="InputName">
+            <div *ngIf="regForm.get('InputName').invalid && regForm.get('InputName').dirty" class="error">Pole wymagane!</div>
+        </div>
+        <div class="form-group">
+          <label for="InputSurname">Surname: </label>
+          <input type="text" class="form-control" id="InputSurname" formControlName="InputSurname">
+          <div *ngIf="regForm.get('InputSurname').invalid && regForm.get('InputSurname').dirty" class="error">Pole wymagane!</div>
+      </div>
+      <div class="form-group">
+        <label for="InputLogin">Login: </label>
+        <input type="text" class="form-control" id="InputLogin" formControlName="InputLogin">
+        <div *ngIf="regForm.get('InputLogin').invalid && regForm.get('InputLogin').dirty" class="error">Pole wymagane!</div>
+    </div>
+        <div class="form-group">
+          <label for="InputEmail">Email address</label>
+          <input type="email" class="form-control" id="InputEmail" formControlName="InputEmail">
+          <div *ngIf="regForm.get('InputEmail').errors && regForm.get('InputEmail').errors.required && regForm.get('InputEmail').dirty" class="error">Pole wymagane!</div>
+          <div *ngIf="regForm.get('InputEmail').errors && regForm.get('InputEmail').errors.email" class="error">Błedny format maila!</div>
+        </div>
+        <div class="form-group">
+          <label for="InputPassword">Password</label>
+          <input type="password" class="form-control" id="InputPassword" formControlName="InputPassword">
+          <div *ngIf="regForm.get('InputPassword').errors && regForm.get('InputPassword').errors.required && regForm.get('InputPassword').dirty" class="error">Pole wymagane!</div>
+          <div *ngIf="regForm.get('InputPassword').errors && regForm.get('InputPassword').errors.minlength" class="error">Hasło za krótkie!</div>
+        </div>
+        <div class="form-group">
+          <label for="InputPhone">Phone</label>
+          <input type="text" class="form-control" id="InputPhone" formControlName="InputPhone">
+          <div *ngIf="regForm.get('InputPhone').errors && regForm.get('InputPhone').errors.required && regForm.get('InputPhone').dirty" class="error">Pole wymagane!</div>
+          <div *ngIf="regForm.get('InputPhone').errors && regForm.get('InputPhone').errors.pattern" class="error">Błedny format telefonu!</div>
+        </div>
+        <div class="form-group">
+          <label for="InputDate">Date of Birth</label>
+          <input type="date" class="form-control" id="InputDate" formControlName="InputDate">
+          <div *ngIf="regForm.get('InputDate').invalid && regForm.get('InputDate').dirty" class="error">Pole wymagane!</div>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="Check" formControlName="Check">
+            <label class="form-check-label" for="Check">Nie jestem botem</label>
+          </div>
+        <button type="submit" [disabled]="regForm.invalid" class="btn btn-primary">OK</button>
+        <p class="success">{{response}}</p>
+      </form>
+    </div>

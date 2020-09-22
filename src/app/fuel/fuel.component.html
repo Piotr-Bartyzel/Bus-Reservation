@@ -1,0 +1,24 @@
+<h4 class="newsI myBox3"><img class="small" type="image" src="assets/8.png" alt="img"/> Zapis kosztów tankowania:</h4>
+
+        <form class="text-center formA" [formGroup]="fuelForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="InputAmount">Ilość:</label>
+              <input type="number" class="form-control" id="InputAmount" formControlName="InputAmount">
+            </div>
+            <div class="form-group">
+                <label for="InputCost">Koszt:</label>
+                <input type="number" class="form-control" id="InputCost" formControlName="InputCost">
+            </div>
+            <div class="form-group" *ngIf="workers.length">
+                <label for="InputWorker">Pracownik:</label>
+            <select class="form-control form-control-sm" formControlName="InputWorker">
+                <option *ngFor="let w of workers" [ngValue]="w.id">{{w.imie}}</option>
+            </select>
+            </div>
+            <button type="submit" class="btn btn-primary">OK</button>
+            <p [ngClass]="red ? 'error' : 'sucess'">{{response}}</p>
+          </form>
+
+    
+   
+

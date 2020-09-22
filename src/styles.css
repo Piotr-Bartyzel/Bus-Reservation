@@ -1,0 +1,120 @@
+/* You can add global styles to this file, and also import other style files */
+html, body{
+   /* background-color: rgb(177, 177, 177) !important;*/
+    height: 100%;
+    height: max-content;
+   
+}
+
+.myBox {
+    position: relative;
+    top:10px;
+    left: 50%;
+    transform: translate(-50%,0);
+    padding: 20px;
+    width: 70%;
+    background-color: rgb(211, 211, 211);
+    text-align: center;
+    animation: resizeBox 0.5s;
+}
+.back, .blurImg {
+    z-index: -1;
+}
+
+td{
+    padding: 0 20px;
+}
+
+.small {
+    height: 40px;
+}
+
+.medium {
+    height: 70px;
+}
+.myBox2 {
+    position: relative;
+    top:10px;
+    left: 80px;
+    width: 40%;
+    animation: resizeBox2 0.5s;
+  /*  box-shadow: 0px 0px 40px 1px rgb(0, 94, 182);*/
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(194, 194, 194);
+    margin-top: 20px;
+}
+
+.myBox3 {
+    position: relative;
+    top:10px;
+    left: 80px;
+    width: 40%;
+    animation: resizeBox2 0.5s;
+    margin-top: 20px;
+    
+}
+.newsI {
+ color: rgb(156, 156, 156);
+}
+
+.scroll {
+    overflow: scroll;
+    width: max-content;
+    height: 400px;
+}
+table {
+    text-align: center;
+}
+.one {
+    background-color: rgb(163, 163, 163);
+}
+
+.smallB {
+    margin: 2px;
+}
+.center {
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+.formA {
+    /*  margin-left: 20px;
+      margin-top: 20px;*/
+      margin-top: 20px;
+      width: 40%;
+      background-color: rgb(163, 163, 163);
+      z-index: 2;
+      height: 40%;
+      padding: 10px;
+      border-radius: 10px;
+      animation: resizeA 0.25s;  
+  }
+  
+  .error {
+    color:red;
+}
+
+.success {
+    color: green;
+    font-size: 120%;
+}
+
+@keyframes resizeBox {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+  }
+
+  @keyframes resizeBox2 {
+    from {
+        left: 20%
+    }
+    to {
+        left: 80px
+    }
+  }

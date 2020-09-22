@@ -1,0 +1,83 @@
+html, body{
+    /* background-color: rgb(177, 177, 177) !important;*/
+     height: 1000px;
+ }
+
+
+
+.main{
+    width: 100%;
+}
+
+.blur2 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.formA {
+    /*  margin-left: 20px;
+      margin-top: 20px;*/
+      margin-top: 20px;
+      width: 40%;
+      background-color: rgb(196, 194, 194);
+      z-index: 2;
+      height: 40%;
+      padding: 10px;
+      border-radius: 10px;
+      animation: resizeA 0.25s;  
+  }
+  
+  .formB {
+    /*  margin-left: 20px;
+      margin-top: 20px;*/
+      z-index: 2;
+      margin-top: 20px;
+      border-radius: 10px;
+      width: 40%;
+      background-color: rgb(196, 194, 194);
+      padding: 10px;
+      animation: resizeB 0.5s; 
+  }
+
+  button {
+      margin: 0 2px;
+  }
+  
+  input:focus {
+      box-shadow: 0px 0px 20px 5px lightskyblue;
+      animation: focusIt 0.25s;
+  }
+  
+  @keyframes focusIt {
+      from {
+          box-shadow: 0px 0px 100px 5px lightskyblue;
+          
+      }
+      to {
+          box-shadow: 0px 0px 20px 5px lightskyblue;
+         
+      }
+    }
+  
+  @keyframes resizeA {
+      from {
+         width: 10%;
+      }
+      to {
+         width: 40%;
+      }
+  }
+
+  @keyframes resizeB {
+        from {
+           height: 10%;
+        }
+        to {
+           height: 100%;
+        }
+  }

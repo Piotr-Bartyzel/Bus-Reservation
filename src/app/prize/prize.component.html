@@ -1,0 +1,17 @@
+<h4 class="newsI myBox3"><img class="small" type="image" src="assets/6.png" alt="img"/>  Nagrody:</h4>
+<div class="myBox2 scroll">
+    <p *ngIf="info.length">Użytkowniku {{info[0].login}} posiadasz {{info[0].punkty}} punktów!</p>
+    <table *ngIf="prize.length" class="center">
+        <tr>
+            <th>Nagroda</th>
+            <th>Wymagane punkty</th>
+        </tr>
+        <tr *ngFor="let p of prize; let even = even" [ngClass]="even ? 'one' : 'two'">
+            <td>{{p.nazwa}}</td>
+            <td>{{p.punkty}}</td>
+            <td><button type="button" class="btn btn-success smallB" (click)="getP(p.id)">+</button></td>
+        </tr>
+    </table>
+    <p class="success">{{response}}</p>
+    <p class="error">{{response2}}</p>
+</div>

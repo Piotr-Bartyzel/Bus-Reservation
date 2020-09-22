@@ -1,0 +1,58 @@
+.news {
+   
+    padding: 0;
+}
+.news div {
+    padding: 10px;
+    text-align: center;
+}
+.red {
+    color: darkred;
+    margin: 20px;
+    font-size: 150%;
+
+}
+
+.mainButton{
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(160, 208, 253);
+    border: 2px solid rgb(160, 208, 253);
+    color:rgb(14, 61, 105);
+    font-size: 120%;
+    animation: shade2 0.25s 
+}
+
+.mainButton:hover{
+    box-shadow: 0px 0px 20px 5px rgb(73, 158, 255);
+    animation: shade 0.25s 
+}
+
+.myBox{
+    right: 80px;
+}
+
+.b {
+    background-color: rgb(255, 255, 255);
+}
+
+@keyframes shade {
+    from {
+        box-shadow: 0px 0px 0px 0px rgb(73, 158, 255);
+        
+    }
+    to {
+        box-shadow: 0px 0px 20px 5px rgb(73, 158, 255); 
+    }
+  }
+
+  @keyframes shade2 {
+    from {
+        box-shadow: 0px 0px 20px 5px rgb(73, 158, 255);
+        
+    }
+    to {
+        box-shadow: 0px 0px 0px 0px rgb(73, 158, 255); 
+    }
+  }

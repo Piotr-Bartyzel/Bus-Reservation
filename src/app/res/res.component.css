@@ -1,0 +1,18 @@
+.formA {
+    margin: 0 auto;
+}
+
+.formM {
+    width: 130px;
+    height: 130px;
+    padding: 10px;
+    }
+
+    .bl {
+        color: rgb(79, 140, 255);
+       }
+       .first {
+         background-color: rgb(218, 248, 255);
+         border: 2px solid rgb(218, 248, 255);
+       }
+      

@@ -1,0 +1,39 @@
+.formA {
+  background-color: rgb(163, 163, 163);
+      margin: 0 auto;
+  }
+
+ table {
+   width: 50%;
+   padding: 0;
+   margin: 0;
+ }
+ .bl {
+  color: rgb(79, 140, 255);
+ }
+ .first {
+   background-color: rgb(218, 248, 255);
+   border: 2px solid rgb(218, 248, 255);
+ }
+
+ .form {
+ width: 130px;
+ height: 130px;
+ padding: 0px;
+ }
+ .a, .b{
+    float: left;
+  }
+  .sucess {
+    color: green;
+  }
+
+  .error {
+      color:red;
+  }
+
+  th, td {
+      padding: 0 20px;
+  }
+
+  

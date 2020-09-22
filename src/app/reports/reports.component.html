@@ -1,0 +1,18 @@
+<h4 class="newsI myBox3">Raporty za tankowanie:</h4>
+<div class="myBox2 scroll">
+    <table *ngIf="report.length">
+        <tr>
+            <th>Kilometry</th>
+            <th>Koszt</th>
+            <th>Imie</th>
+            <th>Nazwisko</th>
+        </tr>
+        <tr *ngFor="let r of report; let even = even" [ngClass]="even ? 'one' : 'two'">
+            <td>{{r.kilometry}}</td>
+            <td>{{r.koszt_tankowania}}</td>
+            <td>{{r.imie_pracownika}}</td>
+            <td>{{r.nazwisko_pracownika}}</td>
+            
+        </tr>
+    </table>
+</div>

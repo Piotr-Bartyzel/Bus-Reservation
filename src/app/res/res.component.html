@@ -1,0 +1,51 @@
+<h4 class="newsI myBox3">Rezerwacja:</h4>
+<div class="news myBox">
+    <button  (click)="setVisible(1)" class="formM" [ngClass]="{'first': vis===1}"><img class="medium" type="image" src="assets/4.png" alt="img"/><p class="bl">Rezerwacja</p></button>
+    <button (click)="setVisible(2)" class="formM"  [ngClass]="{'first': vis===2}"><img class="medium" type="image" src="assets/3.png" alt="img"/><p class="bl">Anulowanie rezerwacji</p></button>
+
+ <form *ngIf="vis===1" class="text-center formA" [formGroup]="resForm" (ngSubmit)="onSubmit()">
+    <div class="form-group" *ngIf="course.length">
+        <label for="InputCourse">Trasa:</label>
+    <select class="form-control form-control-sm" formControlName="InputCourse" (change)="getStop()">
+        <option *ngFor="let c of course" [ngValue]="[c.id_trasy, c.id_kursu]">{{c.id_kursu}}{{c.nazwa}}&nbsp; &nbsp;{{c.wyjazd}}</option>
+    </select>
+    </div>
+
+    <div class="form-group" *ngIf="stop.length">
+        <label for="InputStop">Przystanek:</label>
+    <select class="form-control form-control-sm" formControlName="InputStop">
+        <option *ngFor="let s of stop" [ngValue]="s.id_przystanku">{{s.nazwa_przystanku}}</option>
+    </select>
+    </div>
+    <div class="form-group" *ngIf="show==1">
+        <label for="InputPlace">Miejsca:</label>
+    <select class="form-control form-control-sm" formControlName="InputPlace">
+        <option *ngFor="let p of places" [ngValue]="p">{{p}}</option>
+    </select>
+    </div>
+    <div class="form-group">
+        <label for="InputDate">Data:</label>
+        <input type="date" class="form-control" id="InputDate" formControlName="InputDate">
+      </div>
+      <button type="submit" [disabled]="resForm.invalid" class="btn btn-primary">OK</button>
+      <p>{{response}}</p>
+  </form>
+
+  <form *ngIf="vis===2" class="text-center formA" [formGroup]="res1Form" (ngSubmit)="onSubmit1()">
+    <div class="form-group" *ngIf="course.length">
+        <label for="InputCourse">Trasa:</label>
+    <select class="form-control form-control-sm" formControlName="InputCourse" (change)="getStop2()">
+        <option *ngFor="let c of course" [ngValue]="[c.id_trasy, c.id_kursu]">{{c.id_kursu}}{{c.nazwa}}&nbsp; &nbsp;{{c.wyjazd}}</option>
+    </select>
+    </div>
+
+    <div class="form-group" *ngIf="show==1">
+        <label for="InputPlace">Miejsca:</label>
+    <select class="form-control form-control-sm" formControlName="InputPlace">
+        <option *ngFor="let p of oc" [ngValue]="p.miejsce">{{p.miejsce}}</option>
+    </select>
+    </div>
+      <button type="submit" [disabled]="res1Form.invalid" class="btn btn-primary">OK</button>
+      <p>{{response}}</p>
+  </form>
+</div>

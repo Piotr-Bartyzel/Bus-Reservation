@@ -1,0 +1,20 @@
+<h4 class="newsI myBox3">Połączenia:</h4>
+<div class="myBox">
+   
+<ng-container *ngIf="course.length">
+<div class="cont" *ngFor="let c of course; let i = index">   
+        <p class="title" (click)="showIt(i)"><img class="small" type="image" src="assets/12.png" alt="img"/>{{c.nazwa}} <i *ngIf="detail!==i then a; else b"></i></p>
+        <div *ngIf="detail===i">
+            <p>Wyjazd:  &nbsp; &nbsp;{{c.wyjazd}}</p>
+            <p>Czas jazdy:  &nbsp; &nbsp;{{c.czas}}</p>
+            <p>Firma:  &nbsp; &nbsp;{{c.firma}}</p>
+            <p *ngIf="c.dni===0">Kursuje w:  &nbsp; &nbsp;dni powszednie</p>
+            <p *ngIf="c.dni===1">Kursuje w:  &nbsp; &nbsp;niedzielę oraz święta</p>
+            <p *ngIf="c.dni===2">Kursuje w:  &nbsp; &nbsp; wszystkie dni</p>
+        </div>
+</div>
+</ng-container>
+</div>
+
+<ng-template #a>+</ng-template>
+<ng-template #b>-</ng-template>

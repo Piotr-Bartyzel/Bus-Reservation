@@ -1,0 +1,49 @@
+<h4 class="newsI myBox3">Grafik:</h4>
+<div class="news myBox">
+<div class="scroll center">
+    <table class="a center" *ngIf="rota.length">
+        <tr>
+            <th>id</th>
+            <th>Imie</th>
+            <th>Nazwisko</th>
+            <th>Data</th>
+            <th>Godzina</th>
+        </tr>
+        <tr *ngFor="let r of rota; let even = even" [ngClass]="even ? 'one' : 'two'">
+            <td>{{r.id_grafiku}}</td>
+            <td>{{r.imie}}</td>
+            <td>{{r.nazwisko}}</td>
+            <td>{{r.data}}</td>
+            <td>{{r.godzina}}</td>
+            <td><button type="submit" class="btn btn-danger smallB" (click)="disableIt(r.id_grafiku)">X</button></td>
+        </tr>
+    </table>
+    <form class="text-center formA b center" [formGroup]="graForm" (ngSubmit)="sendRota()">
+        <div class="form-group" *ngIf="rota.length">
+            <label for="InputG">Id grafiku:</label>
+        <select class="form-control form-control-sm" id="InputG" formControlName="InputG">
+            <option [ngValue]="'b'">--brak--</option>
+            <option *ngFor="let r of rota" [ngValue]="r.id_grafiku">{{r.id_grafiku}}</option>             
+        </select>
+        </div>
+        <div class="form-group">
+            <label for="InputW">Pracownik:</label>
+        <select class="form-control form-control-sm" id="InputW" formControlName="InputW">
+            <option *ngFor="let w of workers2" [ngValue]="w.id">{{w.id}}</option>
+        </select>
+        </div>
+        <div class="form-group">
+            <label for="InputDate">Data:</label>
+            <input type="date" class="form-control" id="InputDate" formControlName="InputDate">
+          </div>
+    
+          <div class="form-group">
+            <label for="InputTime">Godzina:</label>
+            <input type="time" class="form-control" id="InputTime" formControlName="InputTime">
+          </div>
+        
+          <button type="submit" [disabled]="graForm.invalid" class="btn btn-primary">OK</button>
+      
+      </form>
+</div>
+</div>

@@ -1,0 +1,50 @@
+<div id="mainPage">
+  <div class="back"></div>
+  <div class="blurImg"></div>
+  <header #head>
+   <input type="image" src="assets/logo.png" routerLink="/informacje" (click)="change(1)"/>
+    <nav #navig class="navbar navbar-expand-lg">
+      <div class="opacity"></div>
+      <a class="nav-link" routerLink="/informacje" [ngClass]="{'Bstyle': check===1}" (click)="change(1)">Informacje</a>
+      <a class="nav-link" routerLink="/rozklad_jazdy"  [ngClass]="{'Bstyle': check===2}" (click)="change(2)">Rozkład jazdy</a>
+      <a class="nav-link" routerLink="/zaloguj" [ngClass]="{'Bstyle': check===3}" (click)="change(3)">Logowanie</a>
+      <a class="nav-link" routerLink="/kontakt" [ngClass]="{'Bstyle': check===4}" (click)="change(4)">Kontakt</a>
+      <div class="nav-item dropdown" (mouseover)="scroll(5)" (mouseout)="scroll(6)" *ngIf="global.typMenu===0">
+          <a  class="nav-link" data-toggle="dropdown"  href="javascript:;" role="button">My account <img class="small" type="image" src="assets/14.png" alt="img"/></a>
+          <div class="dropdown-content" [ngClass]="{'animateIt': check===5, 'none' : check !== 5}">
+            <a href="#" [ngClass]="{'aanimateIt': check===5, 'anone' : check !== 5}" routerLink="/rezerwacja">Rezerwuj</a>
+            <a href="#" [ngClass]="{'aanimateIt': check===5, 'anone' : check !== 5}" routerLink="/nagrody">Nagrody</a>
+            <a href="#" [ngClass]="{'aanimateIt': check===5, 'anone' : check !== 5}" (click)="signOut()">Wyloguj</a>
+          </div>
+      </div>
+      <div class="nav-item dropdown" (mouseover)="scroll(5)" (mouseout)="scroll(6)" *ngIf="global.typMenu===1">
+        <a  class="nav-link" data-toggle="dropdown"  href="javascript:;" role="button">Admin  <img class="small" type="image" src="assets/14.png" alt="img"/></a>
+        <div class="dropdown-content" [ngClass]="{'animateIt': check===5, 'none' : check !== 5}">
+          <a href="#" [ngClass]="{'aanimateIt': check===5, 'anone' : check !== 5}" routerLink="/raporty">Raporty</a>
+          <a href="#" [ngClass]="{'aanimateIt': check===5, 'anone' : check !== 5}" routerLink="/users">Konta</a>
+          <a href="#" [ngClass]="{'aanimateIt': check===5, 'anone' : check !== 5}" routerLink="/edycja">Modyfikacja</a>
+          <a href="#" [ngClass]="{'aanimateIt': check===5, 'anone' : check !== 5}"  routerLink="/grafik">Grafik</a>
+          <a href="#" [ngClass]="{'aanimateIt': check===5, 'anone' : check !== 5}" (click)="signOut()">Wyloguj</a>
+        </div>
+    </div>
+    <div *ngIf="global.typMenu===2" class="nav-item dropdown" (mouseover)="scroll(5)" (mouseout)="scroll(6)">
+      <a  class="nav-link" data-toggle="dropdown"  href="javascript:;" role="button">Kierowca  <img class="small" type="image" src="assets/14.png" alt="img"/></a>
+      <div class="dropdown-content" [ngClass]="{'animateIt': check===5, 'none' : check !== 5}">
+        <a href="#" [ngClass]="{'aanimateIt': check===5, 'anone' : check !== 5}"  routerLink="/kosztaPaliwa">Koszta</a>
+        <a href="#" [ngClass]="{'aanimateIt': check===5, 'anone' : check !== 5}" (click)="signOut()">Wyloguj</a>
+      </div>
+  </div>
+  <div *ngIf="global.typMenu===3" class="nav-item dropdown" (mouseover)="scroll(5)" (mouseout)="scroll(6)">
+    <a  class="nav-link" data-toggle="dropdown"  href="javascript:;" role="button">Sekretariat  <img class="small" type="image" src="assets/14.png" alt="img"/></a>
+    <div class="dropdown-content" [ngClass]="{'animateIt': check===5, 'none' : check !== 5}">
+      <a href="#" [ngClass]="{'aanimateIt': check===5, 'anone' : check !== 5}"  routerLink="/raporty">Raporty</a>
+      <a href="#" [ngClass]="{'aanimateIt': check===5, 'anone' : check !== 5}"  routerLink="/grafik">Grafik</a>
+      <a href="#" [ngClass]="{'aanimateIt': check===5, 'anone' : check !== 5}" (click)="signOut()">Wyloguj</a>
+    </div>
+</div>
+    </nav>
+   
+  </header>
+  
+  <router-outlet></router-outlet>
+</div>

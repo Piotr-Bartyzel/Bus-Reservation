@@ -1,0 +1,10 @@
+.formA {
+      margin-top: 20px;
+      width: 50%;
+      background-color: rgb(196, 194, 194);
+      z-index: 12;
+      padding: 10px;
+      margin: 0 auto;
+      border-radius: 10px;
+      animation: resizeA 0.25s;  
+  }

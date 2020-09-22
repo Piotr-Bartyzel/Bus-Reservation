@@ -1,0 +1,17 @@
+<div class="myBox2 scroll">
+    <table *ngIf="users">
+        <tr>
+        <th>Imie</th>
+        <th>Nazwisko</th>
+        <th>Login</th>
+        <th>Email</th>
+        <th>Numer</th>
+        <th>Data urodznia</th>
+        </tr>
+        <tr *ngFor="let user of users; let even = even"
+         [ngClass]="even ? 'one' : 'two'" ><td>{{user.imie}}</td><td> {{user.nazwisko}} </td>
+         <td> {{user.login}} </td> <td>{{user.email}}</td><td>{{user.numer}} </td><td> {{user.data}}</td></tr>
+        
+    </table>
+    
+</div>
